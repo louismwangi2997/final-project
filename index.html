@@ -1,46 +1,90 @@
+```html id="cinematch-index"
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movie suggestion and recommendation website| Home</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie recommendation and suggestion website| Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>MOVIE MOOD</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="recommendation.html">Movies</a>
-      <a href="last.html">Favorites</a>
-    </nav>
-  </header>
+    <!-- HEADER -->
+    <header>
+        <h1>MOVIE MOOD</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="recommendation.html">Movies</a>
+            <a href="last.html">Favorites</a>
+        </nav>
+    </header>
 
-  <main>
-    <p>Welcome to Movie mood, your ultimate movie discovery platform designed to help you find the perfect film for any moment. Whether you're in the mood for action, comedy, romance, or something completely different, Movie mood makes it easy to explore, search, and save movies you’ll love. Browse through our curated selections, discover new favorites, and take the stress out of choosing what to watch. Your next great movie experience starts here.
-</p>
-    <section>
-      <h2>Find Your Next Movie</h2>
+    <!-- MAIN CONTENT -->
+    <main>
 
-      <!-- FORM (Requirement Met) -->
-      <form id="searchForm">
-        <input type="text" id="searchInput" placeholder="Search for movies..." required>
-        <button type="submit">Search</button>
-      </form>
+        <!-- INTRODUCTION -->
+        <section class="hero">
+            <h2>Welcome to MovieMood</h2>
+            <p>
+                Welcome to MovieMood, your ultimate movie discovery platform designed to help you 
+                find the perfect film for any moment. Whether you're in the mood for action, comedy, 
+                romance, or something completely different, MovieMood makes it easy to explore, 
+                search, and save movies you’ll love.
+            </p>
+        </section>
 
-    </section>
+        <!-- FEATURED MOVIES -->
+        <section>
+            <h2>Featured Movies</h2>
 
-    <section>
-      <h2>Featured Movies</h2>
-      <div id="featuredMovies"></div>
-    </section>
-  </main>
+            <div class="movie-grid">
 
-  <footer>
-    <p>© 2026 CineMatch</p>
-  </footer>
+                <!-- MOVIE 1 -->
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x400" alt="Action Movie">
+                    <div class="movie-info">
+                        <h3>Fast Action</h3>
+                        <p>An adrenaline-filled action movie with intense car chases and thrilling moments.</p>
+                    </div>
+                </div>
+
+                <!-- MOVIE 2 -->
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x400" alt="Comedy Movie">
+                    <div class="movie-info">
+                        <h3>Laugh Out Loud</h3>
+                        <p>A hilarious comedy that will keep you entertained from start to finish.</p>
+                    </div>
+                </div>
+
+                <!-- MOVIE 3 -->
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x400" alt="Romance Movie">
+                    <div class="movie-info">
+                        <h3>Love Story</h3>
+                        <p>A touching romance about love, relationships, and unforgettable moments.</p>
+                    </div>
+                </div>
+
+                <!-- MOVIE 4 -->
+                <div class="movie-card">
+                    <img src="https://via.placeholder.com/300x400" alt="Horror Movie">
+                    <div class="movie-info">
+                        <h3>Night Terror</h3>
+                        <p>A chilling horror film that will keep you on the edge of your seat.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 CineMatch | Movie Recommendation Website</p>
+    </footer>
 
 </body>
 </html>
-
+```
