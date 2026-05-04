@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie suggestion and recomendation website| Movies</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>MOVIES</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="last.html">Favorites</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Filter Movies</h2>
+
+      <!-- FORM (Another good use of forms) -->
+      <form>
+        <label for="genre">Choose Genre:</label>
+        <select id="genre">
+          <option value="all">All</option>
+          <option value="action">Action</option>
+          <option value="comedy">Comedy</option>
+          <option value="romance">Romance</option>
+          <option value="horror">Horror</option>
+        </select>
+      </form>
+
+    </section>
+
+    <section>
+      <h2>Movie List</h2>
+      <div id="movieList"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 CineMatch</p>
+  </footer>
+
+</body>
+</html>
+
