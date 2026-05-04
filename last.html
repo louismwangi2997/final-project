@@ -1,0 +1,78 @@
+```html id="fav-html"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch | Feedback & Suggestions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>CineMatch 🎬</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="favorites.html">Feedback</a>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- FEEDBACK FORM -->
+        <section>
+            <h2>Give Us Your Feedback</h2>
+
+            <form id="feedbackForm">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Your Feedback:</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+
+        <!-- MOVIE RECOMMENDATION FORM -->
+        <section>
+            <h2>Suggest a Movie</h2>
+
+            <form id="recommendationForm">
+
+                <label for="movieTitle">Movie Title:</label><br>
+                <input type="text" id="movieTitle" name="movieTitle" required><br><br>
+
+                <label for="genre">Genre:</label><br>
+                <select id="genre" name="genre" required>
+                    <option value="">Select Genre</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="romance">Romance</option>
+                    <option value="horror">Horror</option>
+                </select><br><br>
+
+                <label for="description">Why do you recommend it?</label><br>
+                <textarea id="description" name="description" rows="4" required></textarea><br><br>
+
+                <button type="submit">Submit Recommendation</button>
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 CineMatch | Movie Recommendation Website</p>
+    </footer>
+
+</body>
+</html>
+```
