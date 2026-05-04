@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch | Movies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Browse Movies</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="recommendation.html">Movies</a>
+            <a href="last.html">Favorites</a>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+
+        <!-- SEARCH + FILTER SECTION -->
+        <section>
+            <h2>Find Movies</h2>
+
+            <!-- SEARCH FORM -->
+            <form id="searchForm">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search for a movie..." 
+                >
+                <button type="submit">Search</button>
+            </form>
+
+            <!-- GENRE FILTER -->
+            <div style="margin-top: 15px;">
+                <label for="genre">Choose Genre:</label>
+                <select id="genre">
+                    <option value="all">All</option>
+                    <option value="action">Action</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="romance">Romance</option>
+                    <option value="horror">Horror</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- MOVIE DISPLAY SECTION -->
+        <section>
+            <h2>Movies</h2>
+
+            <div class="movie-grid" id="movieList">
+                <!-- Movies will change dynamically with JavaScript -->
+
+                <!-- DEFAULT MOVIES (Example) -->
+
+                <div class="movie-card" data-genre="action">
+                    <img src="https://via.placeholder.com/300x400" alt="Action Movie">
+                    <div class="movie-info">
+                        <h3>Fast Action</h3>
+                        <p>High-speed chases and explosive action scenes.</p>
+                    </div>
+                </div>
+
+                <div class="movie-card" data-genre="comedy">
+                    <img src="https://via.placeholder.com/300x400" alt="Comedy Movie">
+                    <div class="movie-info">
+                        <h3>Laugh Out Loud</h3>
+                        <p>A fun comedy guaranteed to make you smile.</p>
+                    </div>
+                </div>
+
+                <div class="movie-card" data-genre="romance">
+                    <img src="https://via.placeholder.com/300x400" alt="Romance Movie">
+                    <div class="movie-info">
+                        <h3>Love Story</h3>
+                        <p>A heartfelt romantic journey.</p>
+                    </div>
+                </div>
+
+                <div class="movie-card" data-genre="horror">
+                    <img src="https://via.placeholder.com/300x400" alt="Horror Movie">
+                    <div class="movie-info">
+                        <h3>Night Terror</h3>
+                        <p>A scary film full of suspense and fear.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 CineMatch</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
