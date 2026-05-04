@@ -1,4 +1,4 @@
-```css id="l9x2pq"
+```css id="pv82ks"
 /* RESET */
 * {
     margin: 0;
@@ -8,126 +8,123 @@
 
 /* BODY */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #eef2ff, #e0f2fe);
-    color: #1e293b;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #0f171e; /* Prime Video dark background */
+    color: #ffffff;
 }
 
 /* HEADER */
 header {
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.6);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    position: sticky;
-    top: 0;
+    background: #1a242f;
+    border-bottom: 1px solid #22303c;
+    padding: 20px 40px;
+    text-align: center;
 }
 
 header h1 {
-    color: #4f46e5;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: #00a8e1; /* Prime blue */
+}
+
+/* NAV */
+nav {
+    margin-top: 10px;
 }
 
 nav a {
-    margin-left: 20px;
+    margin: 0 15px;
     text-decoration: none;
-    color: #1e293b;
-    font-weight: 600;
+    color: #d1d5db;
+    font-weight: 500;
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: #4f46e5;
+    color: #00a8e1;
 }
 
 /* HERO */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 70px 20px;
+    background: #0f171e;
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
 }
 
 .hero p {
-    color: #475569;
+    color: #9ca3af;
     margin-bottom: 20px;
 }
 
 /* SEARCH */
-form {
-    margin-top: 20px;
-}
-
 input[type="text"] {
-    padding: 12px;
-    width: 260px;
-    border-radius: 8px;
-    border: 1px solid #cbd5e1;
-    outline: none;
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #22303c;
+    background: #1a242f;
+    color: #ffffff;
 }
 
 button {
-    padding: 12px 18px;
-    background: #4f46e5;
-    color: white;
+    padding: 10px 15px;
     border: none;
-    border-radius: 8px;
+    background: #00a8e1;
+    color: #0f171e;
     cursor: pointer;
-    margin-left: 5px;
-    transition: 0.3s;
+    font-weight: bold;
 }
 
 button:hover {
-    background: #4338ca;
+    background: #0090c5;
 }
 
 /* MAIN */
 main {
+    max-width: 1100px;
+    margin: auto;
     padding: 30px;
 }
 
 /* SECTION */
 section {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 section h2 {
-    margin-bottom: 20px;
-    border-bottom: 2px solid #4f46e5;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #00a8e1;
     display: inline-block;
-    padding-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 /* GRID */
 .movie-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
-/* CARD (GLASS EFFECT) */
+/* CARD */
 .movie-card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(12px);
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.4);
+    background: #1a242f;
+    border: 1px solid #22303c;
     transition: 0.3s;
 }
 
 .movie-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    border-color: #00a8e1;
 }
 
+/* IMAGE */
 .movie-card img {
     width: 100%;
-    height: 280px;
+    height: 320px;
     object-fit: cover;
 }
 
@@ -137,42 +134,37 @@ section h2 {
 }
 
 .movie-info h3 {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    color: #ffffff;
 }
 
 .movie-info p {
-    font-size: 0.9rem;
-    color: #475569;
+    font-size: 0.95rem;
+    color: #9ca3af;
 }
 
 /* FILTER */
 select {
     padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #cbd5e1;
-}
-
-/* FAVORITES */
-#favoritesList p {
-    color: #64748b;
+    border: 1px solid #22303c;
+    background: #1a242f;
+    color: #ffffff;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
-    background: rgba(255,255,255,0.5);
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid #22303c;
+    background: #1a242f;
+    color: #9ca3af;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-
-    nav {
-        margin-top: 10px;
+    nav a {
+        display: block;
+        margin: 10px 0;
     }
 
     input[type="text"] {
