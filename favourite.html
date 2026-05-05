@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites | MovieMood</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Your Favorite Movies</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="recommendation.html">Movies</a>
+        <a href="favourite.html">Favorites</a>
+    </nav>
+</header>
+
+<main>
+
+<!-- ================= FAVORITES ================= -->
+<section>
+    <h2>Saved Movies</h2>
+
+    <div id="favoritesList" class="movie-grid"></div>
+
+    <p id="emptyFavorites" class="no-results">
+        You have no favorite movies yet.
+    </p>
+</section>
+
+<!-- ================= MOVIE SUGGESTION FORM ================= -->
+<section>
+    <h2>Suggest a Movie</h2>
+
+    <form id="suggestForm">
+        <input type="text" id="movieName" placeholder="Movie Title" required>
+        <input type="text" id="movieGenre" placeholder="Genre" required>
+        <button type="submit">Submit Suggestion</button>
+    </form>
+
+    <p id="suggestMsg" class="success-message">Suggestion submitted!</p>
+</section>
+
+<!-- ================= FEEDBACK FORM ================= -->
+<section>
+    <h2>Give Feedback</h2>
+
+    <form id="feedbackForm">
+        <input type="text" id="userName" placeholder="Your Name" required>
+        <textarea id="feedbackText" placeholder="Write your feedback..." required></textarea>
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+    <p id="feedbackMsg" class="success-message">Feedback submitted!</p>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 MovieMood</p>
+</footer>
+
+<script src="code.js"></script>
+
+</body>
+</html>
+
