@@ -1,197 +1,192 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recommendations| Movies</title>
+    <title>Recommendations | Movies</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <h1>Browse Movies</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="recommendation.html">Movies</a>
-            <a href="last.html">Feedback</a>
-        </nav>
-    </header>
+<header>
+    <h1>Browse Movies</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="recommendation.html">Movies</a>
+        <a href="last.html">Feedback</a>
+    </nav>
+</header>
 
-    <!-- MAIN -->
-    <main>
+<main>
 
-        <!-- SEARCH + FILTER SECTION -->
-        <section>
-            <h2>Find Movies</h2>
+<section>
+    <h2>Find Movies</h2>
 
-            <!-- SEARCH FORM -->
-            <form id="searchForm">
-                <input 
-                    type="text" 
-                    id="searchInput" 
-                    placeholder="Search for a movie..." 
-                >
-                <button type="submit">Search</button>
-            </form>
+    <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Search for a movie...">
+        <button type="submit">Search</button>
+    </form>
 
-            <!-- GENRE FILTER -->
-            <div style="margin-top: 15px;">
-                <label for="genre">Choose Genre:</label>
-                <select id="genre">
-                    <option value="all">All</option>
-                    <option value="action">Action</option>
-                    <option value="comedy">Comedy</option>
-                    <option value="romance">Romance</option>
-                    <option value="horror">Horror</option>
-                </select>
-            </div>
-        </section>
+    <div style="margin-top: 15px;">
+        <label>Genre:</label>
+        <select id="genre">
+            <option value="all">All</option>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+            <option value="romance">Romance</option>
+            <option value="horror">Horror</option>
+        </select>
+    </div>
 
-        <!-- MOVIE DISPLAY SECTION -->
-        <section>
-            <h2>Movies</h2>
+    <div style="margin-top: 20px;">
+        <label>Enter Age:</label>
+        <input type="number" id="ageInput" placeholder="Enter your age">
+        <button id="ageBtn">Find Movies</button>
+        <p id="ageError" class="error-message">Please enter a valid age.</p>
+    </div>
+</section>
 
-            <div class="movie-grid" id="movieList">
-                <!-- Movies will change dynamically with JavaScript -->
+<section>
+    <h2>Movies</h2>
 
-                <!-- DEFAULT MOVIES (Example) -->
-                 
-<!-- ================= ACTION ================= -->
-<div class="movie-card" data-genre="action">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Fast Action</h3><p>High-speed chases and explosions.</p></div>
-</div>
+    <div class="movie-grid" id="movieList">
 
-<div class="movie-card" data-genre="action">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>War Zone</h3><p>Elite soldiers in intense missions.</p></div>
-</div>
+        <!-- ===== 18+ ===== -->
+        <div class="movie-card" data-genre="action" data-age="18andAbove">
+            <img src="actionHOME.jpg">
+            <div class="movie-info"><h3>Fast and furious</h3><p>High speed chases</p></div>
+        </div>
 
-<div class="movie-card" data-genre="action">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Street Fighter</h3><p>Underground fights and survival.</p></div>
-</div>
+        <div class="movie-card" data-genre="horror" data-age="18andAbove">
+            <img src="finalDestination.png">
+            <div class="movie-info"><h3>Final destination</h3><p>Dark horror story.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="action">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Hero Rise</h3><p>A hero protects the city.</p></div>
-</div>
+        <div class="movie-card" data-genre="action" data-age="18andAbove">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>War Zone</h3><p>Military action drama.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="action">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Mission Strike</h3><p>Secret agents on a global mission.</p></div>
-</div>
+        <div class="movie-card" data-genre="action" data-age="18andAbove">
+            <img src="MichaelJackson.jpg">
+            <div class="movie-info"><h3>Michael jackson movie</h3><p>Life story of a person who changed the world.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="action">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Final Battle</h3><p>The ultimate showdown begins.</p></div>
-</div>
+        <div class="movie-card" data-genre="romance" data-age="18andAbove">
+            <img src="beautyinblack.jpg">
+            <div class="movie-info"><h3>beauty in black</h3><p>Epic showdown.</p></div>
+        </div>
 
-<!-- ================= COMEDY ================= -->
-<div class="movie-card" data-genre="comedy">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Laugh Out Loud</h3><p>Comedy that never stops.</p></div>
-</div>
+        <div class="movie-card" data-genre="horror" data-age="18andAbove">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Dark Shadows</h3><p>Unknown fears.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="comedy">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Crazy Friends</h3><p>A group of hilarious friends.</p></div>
-</div>
+        <!-- ===== 13–17 ===== -->
+        <div class="movie-card" data-genre="comedy" data-age="13to17">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Laugh Out Loud</h3><p>Teen comedy.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="comedy">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Office Chaos</h3><p>Work life gone wrong.</p></div>
-</div>
+        <div class="movie-card" data-genre="comedy" data-age="13to17">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Crazy Friends</h3><p>Fun adventures.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="comedy">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Funny Trip</h3><p>A vacation full of surprises.</p></div>
-</div>
+        <div class="movie-card" data-genre="romance" data-age="13to17">
+            <img src="wutheringHeights.jpg">
+            <div class="movie-info"><h3>wuthering heights</h3><p>Adventure and romance.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="comedy">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Jokes Apart</h3><p>Comedy meets real life.</p></div>
-</div>
+        <div class="movie-card" data-genre="comedy" data-age="13to17">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>School Chaos</h3><p>Funny school life.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="comedy">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Laugh Riot</h3><p>Non-stop funny moments.</p></div>
-</div>
+        <div class="movie-card" data-genre="action" data-age="13to17">
+            <img src="theBoys.jpg">
+            <div class="movie-info"><h3>The Boys</h3><p>A group of heros save the day.</p></div>
+        </div>
 
-<!-- ================= ROMANCE ================= -->
-<div class="movie-card" data-genre="romance">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Love Story</h3><p>A timeless romance.</p></div>
-</div>
+        <div class="movie-card" data-genre="comedy" data-age="13to17">
+            <img src="Grownupsmovie.jpg">
+            <div class="movie-info"><h3>Grown Ups</h3><p>Vacation gone wild.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="romance">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Forever Us</h3><p>Love that never fades.</p></div>
-</div>
+        <!-- ===== 7–12 ===== -->
+        <div class="movie-card" data-genre="romance" data-age="7to12">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Love Story</h3><p>Simple love tale.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="romance">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Heart Beats</h3><p>A love born unexpectedly.</p></div>
-</div>
+        <div class="movie-card" data-genre="comedy" data-age="7to12">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Happy Town</h3><p>Fun animation.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="romance">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Love Again</h3><p>Second chances in love.</p></div>
-</div>
+        <div class="movie-card" data-genre="action" data-age="7to12">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Mini Heroes</h3><p>Kids save the day.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="romance">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Perfect Match</h3><p>Two strangers find love.</p></div>
-</div>
+        <div class="movie-card" data-genre="comedy" data-age="7to12">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Cartoon Fun</h3><p>Funny adventures.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="romance">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Endless Love</h3><p>A story of deep connection.</p></div>
-</div>
+        <div class="movie-card" data-genre="romance" data-age="7to12">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Best Friends</h3><p>Friendship story.</p></div>
+        </div>
 
-<!-- ================= HORROR ================= -->
-<div class="movie-card" data-genre="horror">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Night Terror</h3><p>A chilling nightmare.</p></div>
-</div>
+        <div class="movie-card" data-genre="comedy" data-age="7to12">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Play Time</h3><p>Fun childhood story.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="horror">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Haunted House</h3><p>A house full of secrets.</p></div>
-</div>
+        <!-- ===== 6 and Below ===== -->
+        <div class="movie-card" data-genre="comedy" data-age="6andBelow">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Baby World</h3><p>Safe kids fun.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="horror">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Dark Shadows</h3><p>Something lurks in the dark.</p></div>
-</div>
+        <div class="movie-card" data-genre="comedy" data-age="6andBelow">
+            <img src="familyGuy.jpg">
+            <div class="movie-info"><h3>Family Guy</h3><p>Colorful animation.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="horror">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>The Unknown</h3><p>Fear of the unseen.</p></div>
-</div>
+        <div class="movie-card" data-genre="comedy" data-age="6andBelow">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Happy Kids</h3><p>Fun learning show.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="horror">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Silent Fear</h3><p>No escape from terror.</p></div>
-</div>
+        <div class="movie-card" data-genre="comedy" data-age="6andBelow">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Play House</h3><p>Joyful kids stories.</p></div>
+        </div>
 
-<div class="movie-card" data-genre="horror">
-    <img src="https://via.placeholder.com/300x400">
-    <div class="movie-info"><h3>Last Scream</h3><p>The final horror begins.</p></div>
-</div>
+        <div class="movie-card" data-genre="comedy" data-age="6andBelow">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Tiny Adventures</h3><p>Little heroes.</p></div>
+        </div>
 
+        <div class="movie-card" data-genre="comedy" data-age="6andBelow">
+            <img src="https://via.placeholder.com/300x400">
+            <div class="movie-info"><h3>Fun World</h3><p>Bright and cheerful.</p></div>
+        </div>
 
-        </section>
+    </div>
+</section>
 
-    </main>
+</main>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 MovieMood</p>
-    </footer>
+<footer>
+    <p>© 2026 MovieMood</p>
+</footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
 
