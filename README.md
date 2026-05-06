@@ -3,7 +3,7 @@
 
 ## Author information
 **Name**: Louis .
-**Email**: louismwangi2997@gamil.com .
+**Email**: louismwangi2997@gmail.com
 
 ---
 
