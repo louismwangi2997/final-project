@@ -4,7 +4,7 @@
 ## Author information
 **Name**: Louis .
 **Email**: louismwangi2997@gamil.com .
-**GitHub repo**:[](https://louismwangi2997.github.io/final-project/)
+**GitHub repo**:[(https://louismwangi2997.github.io/final-project/)]
 
 ---
 
