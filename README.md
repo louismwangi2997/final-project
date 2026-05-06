@@ -2,8 +2,9 @@
 
 
 ## Author information
-**Name**: Louis
-**Email**: louismwangi2997@gamil.com
+**Name**: Louis .
+**Email**: louismwangi2997@gamil.com .
+**GitHub repo**:[](https://louismwangi2997.github.io/final-project/)
 
 ---
 
@@ -93,73 +94,56 @@ Using VS Code with the Live Server extension:
 
 
 ---
-## How It Works
+# How MovieMood Works
 
-### Initialisation (`DOMContentLoaded`)
+## 1. Finding Movies
 
-`code.js` attaches **two** `DOMContentLoaded` listeners:
-
-1. **Shared initialisation** — Shows all movie cards, then calls the appropriate setup functions depending on which page elements are present (`ageBtn`, `favoritesList`, `suggestForm`, `feedbackForm`).
-2. **Filter button listener** — A dedicated listener that sets up the genre + age click handler for the recommendations page.
-
-This pattern allows a single JS file to run safely on all three pages.
-
-### Movie Filtering Flow
-
-```
-User enters age + genre → click "Find Movies"
-        ↓
-Validate inputs (empty check, NaN check, genre selected)
-        ↓
-Map age number → ageGroup string
-        ↓
-Loop over all .movie-card elements
-  match: show card, add "Add to Favorites" button (once)
-  no match: hide card
-        ↓
-If nothing found → alert + hide grid
-```
-
-### Favourites Flow
-
-```
-Click "Add to Favorites"
-        ↓
-Read movieFavorites from localStorage (or [])
-        ↓
-Check for duplicate title
-  duplicate → alert "Already in favorites!"
-  new → push { title, img } → save → alert "Added!"
-```
-
-```
-favourite.html loads
-        ↓
-loadFavorites() reads localStorage
-        ↓
-Render one .movie-card div per saved movie
-Each card has a "Remove" button
-        ↓
-Click "Remove" → splice from array → save → re-render
-```
+1. Go to the **Movies** page
+2. Select a **genre** (Action, Comedy, Romance, Horror)
+3. Enter your **age**
+4. Click **Find Movies**
+5. Your movie suggestions will appear below
 
 ---
 
+## 2. Saving Favourites 
 
-## Age-Group Logic
+1. When your movies appear, click **Add to Favorites** on any movie card
+2. Go to the **Favorites** page to see all your saved movies
+3. Click **Remove** on any movie to delete it from your list
 
-The age entered by the user is mapped to one of four string values that match the `data-age` attributes on every movie card in `recommendation.html`.
+---
 
-| Age range | `ageGroup` value | `data-age` on cards |
-|---|---|---|
-| 18 and above | `"18andAbove"` | `data-age="18andAbove"` |
-| 13 – 17 | `"13to17"` | `data-age="13to17"` |
-| 7 – 12 | `"7to12"` | `data-age="7to12"` |
-| 6 and below | `"6andBelow"` | `data-age="6andBelow"` |
+## 3. Suggesting a Movie 
 
-> Horror movies are only tagged `data-age="18andAbove"`, so users under 18 will never see them regardless of genre selection.
+1. Go to the **Favorites** page
+2. Scroll down to the **Suggest a Movie** section
+3. Type in a movie title and select a genre
+4. Click **Submit**
 
-> Users aged 6 and below only have Comedy options available, as all other genres lack cards tagged `data-age="6andBelow"`.
+---
+
+## 4. Leaving Feedback 
+
+1. Go to the **Favorites** page
+2. Scroll down to the **Feedback** section
+3. Fill in your name, email, and feedback
+4. Click **Send**
+
+---
+
+## Age Guide
+
+| Your Age | Movies You Will See |
+|---|---|
+| 6 and under | Comedy only |
+| 7 – 12 | Action, Comedy, Romance |
+| 13 – 17 | Action, Comedy, Romance |
+| 18 and above | Action, Comedy, Romance, Horror |
+
+> **Note:** Horror movies are only available to users aged 18 and above.
+
+> **Note**Users aged 6 and below only have Comedy options available, as all other genres lack cards tagged `data-age="6andBelow"`.
 
 
 ---
