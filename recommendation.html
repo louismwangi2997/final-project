@@ -21,16 +21,12 @@
 
 <section>
     <h2>Find Movies</h2>
-
-    <form id="searchForm">
-        <input type="text" id="searchInput" placeholder="Search for a movie...">
-        <button type="submit">Search</button>
-    </form>
-
-    <div style="margin-top: 15px;">
+    <p> Please fill in the form below and put the required information.Once filled, your movie suggestion will appear below.</p><br>
+     <p><em>NB:</em><strong> You have to be atleast 18years or older to watch horror movies.Any ages below 6years will generate only comedy movies.</strong></p><br>
+    <div>
         <label>Genre:</label>
         <select id="genre">
-            <option value="all">All</option>
+            <option value="select">Select genre</option>
             <option value="action">Action</option>
             <option value="comedy">Comedy</option>
             <option value="romance">Romance</option>
@@ -38,150 +34,174 @@
         </select>
     </div>
 
-    <div style="margin-top: 20px;">
+    <div style="margin-top: 15px;">
         <label>Enter Age:</label>
         <input type="number" id="ageInput" placeholder="Enter your age">
         <button id="ageBtn">Find Movies</button>
-        <p id="ageError" class="error-message">Please enter a valid age.</p>
+
+        
     </div>
 </section>
 
 <section>
-    <h2>Movies</h2>
+    <h2>Your movie suggestion will appear below</h2>
 
     <div class="movie-grid" id="movieList">
 
-        <!-- ===== 18+ ===== -->
+        <!-- 18+ -->
         <div class="movie-card" data-genre="action" data-age="18andAbove">
             <img src="actionHOME.jpg">
-            <div class="movie-info"><h3>Fast and Furious</h3><p>High speed chases</p></div>
+            <h3>Fast and Furious</h3>
+            <p>High speed chases</p>
         </div>
 
         <div class="movie-card" data-genre="horror" data-age="18andAbove">
             <img src="finalDestination.png">
-            <div class="movie-info"><h3>Final Destination</h3><p>Dark horror story.</p></div>
+            <h3>Final Destination</h3>
+            <p>Dark horror story</p>
         </div>
 
         <div class="movie-card" data-genre="horror" data-age="18andAbove">
             <img src="theNun.jpg">
-            <div class="movie-info"><h3>The Nun</h3><p>A chilling horror film that will keep you at the edge of your seat.</p></div>
+            <h3>The Nun</h3>
+            <p>Chilling horror film</p>
         </div>
 
         <div class="movie-card" data-genre="action" data-age="18andAbove">
             <img src="MichaelJackson.jpg">
-            <div class="movie-info"><h3>Michael Jackson Movie</h3><p>Life story of a person who changed the world.</p></div>
+            <h3>Michael Jackson Movie</h3>
+            <p>Life story of a legend</p>
         </div>
 
         <div class="movie-card" data-genre="romance" data-age="18andAbove">
             <img src="beautyinblack.jpg">
-            <div class="movie-info"><h3>Beauty in Black</h3><p>Epic story of love and struggle.</p></div>
+            <h3>Beauty in Black</h3>
+            <p>Love and struggle</p>
         </div>
 
         <div class="movie-card" data-genre="horror" data-age="18andAbove">
             <img src="smile.jpg">
-            <div class="movie-info"><h3>Smile</h3><p>Unknown fears.</p></div>
+            <h3>Smile</h3>
+            <p>Unknown fears</p>
+        </div>
+         <div class="movie-card" data-genre="comedy" data-age="18andAbove">
+            <img src="Damsel.jpg">
+            <h3>Damsel</h3>
+            <p>fantasy filled with adventures, dragons and funny momments.</p>
         </div>
 
-        <!-- ===== 13–17 ===== -->
+        <!--  13–17  -->
         <div class="movie-card" data-genre="comedy" data-age="13to17">
             <img src="icarly.jpg">
-            <div class="movie-info"><h3>iCarly</h3><p>Teen comedy.</p></div>
+            <h3>iCarly</h3>
+            <p>Teen comedy</p>
         </div>
 
         <div class="movie-card" data-genre="comedy" data-age="13to17">
             <img src="knightSquad.jpg">
-            <div class="movie-info"><h3>Knight Squad</h3><p>Fun adventures.</p></div>
+            <h3>Knight Squad</h3>
+            <p>Fun adventures</p>
         </div>
 
         <div class="movie-card" data-genre="romance" data-age="13to17">
             <img src="wutheringHeights.jpg">
-            <div class="movie-info"><h3>Wuthering Heights</h3><p>Adventure and romance.</p></div>
+            <h3>Wuthering Heights</h3>
+            <p>Romance drama</p>
         </div>
 
         <div class="movie-card" data-genre="romance" data-age="13to17">
             <img src="euphoria.jpg">
-            <div class="movie-info"><h3>Euphoria</h3><p>Teen drama series.</p></div>
+            <h3>Euphoria</h3>
+            <p>Teen drama</p>
         </div>
 
         <div class="movie-card" data-genre="action" data-age="13to17">
             <img src="theBoys.jpg">
-            <div class="movie-info"><h3>The Boys</h3><p>A group of heroes save the day.</p></div>
+            <h3>The Boys</h3>
+            <p>Superhero action</p>
         </div>
 
         <div class="movie-card" data-genre="comedy" data-age="13to17">
             <img src="Grownupsmovie.jpg">
-            <div class="movie-info"><h3>Grown Ups</h3><p>Vacation gone wild.</p></div>
+            <h3>Grown Ups</h3>
+            <p>Vacation chaos</p>
         </div>
 
-        <!-- ===== 7–12 ===== -->
+        <!--  7–12  -->
         <div class="movie-card" data-genre="romance" data-age="7to12">
             <img src="beauty and the beast.jpg">
-            <div class="movie-info"><h3>Beauty and the Beast</h3><p>Simple love tale.</p></div>
+            <h3>Beauty and the Beast</h3>
+            <p>Classic love story</p>
         </div>
 
         <div class="movie-card" data-genre="comedy" data-age="7to12">
             <img src="gumball.png">
-            <div class="movie-info"><h3>Amazing World of Gumball</h3><p>Fun animation.</p></div>
+            <h3>Gumball</h3>
+            <p>Funny animation</p>
         </div>
 
         <div class="movie-card" data-genre="action" data-age="7to12">
             <img src="hero6.jpg">
-            <div class="movie-info"><h3>Big Hero 6</h3><p>Kids save the day.</p></div>
+            <h3>Big Hero 6</h3>
+            <p>Hero kids save the day</p>
         </div>
 
         <div class="movie-card" data-genre="comedy" data-age="7to12">
             <img src="henryDanger.jpg">
-            <div class="movie-info"><h3>Henry Danger</h3><p>Funny adventures.</p></div>
+            <h3>Henry Danger</h3>
+            <p>Funny adventures</p>
         </div>
 
         <div class="movie-card" data-genre="romance" data-age="7to12">
             <img src="aquamarine.jpg">
-            <div class="movie-info"><h3>Aquamarine</h3><p>Love across worlds.</p></div>
+            <h3>Aquamarine</h3>
+            <p>Friendship & magic</p>
         </div>
 
         <div class="movie-card" data-genre="comedy" data-age="7to12">
             <img src="alexa-and-katie.jpg">
-            <div class="movie-info"><h3>Alexa and Katie</h3><p>Friendship story.</p></div>
+            <h3>Alexa and Katie</h3>
+            <p>Friendship story</p>
         </div>
 
-        <!-- ===== 6 and Below ===== -->
+        <!-- 6 and below -->
         <div class="movie-card" data-genre="comedy" data-age="6andBelow">
             <img src="boss-baby.jpg">
-            <div class="movie-info"><h3>Boss Baby</h3><p>Safe kids fun.</p></div>
+            <h3>Boss Baby</h3>
+            <p>Kids comedy</p>
         </div>
 
         <div class="movie-card" data-genre="comedy" data-age="6andBelow">
             <img src="familyGuy.jpg">
-            <div class="movie-info"><h3>Family Guy</h3><p>Animated comedy.</p></div>
+            <h3>Family Guy</h3>
+            <p>Animated comedy</p>
         </div>
 
         <div class="movie-card" data-genre="comedy" data-age="6andBelow">
             <img src="wtbidea.jpg">
-            <div class="movie-info"><h3>What's the Big Idea</h3><p>Fun learning show.</p></div>
+            <h3>What's the Big Idea</h3>
+            <p>Learning fun</p>
         </div>
 
         <div class="movie-card" data-genre="comedy" data-age="6andBelow">
             <img src="hoopers.jpg">
-            <div class="movie-info"><h3>Hoopers</h3><p>Joyful adventures.</p></div>
+            <h3>Hoopers</h3>
+            <p>Fun adventures</p>
         </div>
 
         <div class="movie-card" data-genre="comedy" data-age="6andBelow">
             <img src="wonderPets.jpg">
-            <div class="movie-info"><h3>Wonder Pets</h3><p>Little heroes.</p></div>
+            <h3>Wonder Pets</h3>
+            <p>Little heroes</p>
         </div>
 
         <div class="movie-card" data-genre="comedy" data-age="6andBelow">
             <img src="zootopia.jpg">
-            <div class="movie-info"><h3>Zootopia</h3><p>Bright and cheerful.</p></div>
+            <h3>Zootopia</h3>
+            <p>Bright and cheerful</p>
         </div>
 
     </div>
-
-    <!-- NO RESULTS -->
-    <p id="noResults" class="no-results">
-        No movies found. Try a different search or filter.
-    </p>
-
 </section>
 
 </main>
@@ -194,4 +214,3 @@
 
 </body>
 </html>
-

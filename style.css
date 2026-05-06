@@ -48,13 +48,6 @@ header h1 {
     margin-bottom: 10px;
 }
 
-.header-img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin-top: 15px;
-}
-
 /* NAV */
 nav {
     margin-top: 10px;
@@ -87,17 +80,7 @@ section h2 {
 }
 
 /* =====================================
-   HERO (INDEX PAGE)
-===================================== */
-.hero {
-    background: #1f1f1f;
-    padding: 30px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-}
-
-/* =====================================
-   FORMS (USED IN ALL PAGES)
+   FORMS
 ===================================== */
 form {
     background: #1f1f1f;
@@ -107,7 +90,6 @@ form {
     margin-top: 15px;
 }
 
-/* INPUTS */
 input, select, textarea {
     width: 100%;
     padding: 12px;
@@ -119,20 +101,9 @@ input, select, textarea {
     color: #fff;
 }
 
-input::placeholder,
-textarea::placeholder {
-    color: #aaa;
-}
-
-/* LABEL */
 label {
     font-weight: bold;
     color: #ddd;
-}
-
-/* TEXTAREA */
-textarea {
-    resize: none;
 }
 
 /* =====================================
@@ -155,13 +126,16 @@ button:hover {
 }
 
 /* =====================================
-   MOVIE GRID
+   MOVIE GRID (FIXED)
 ===================================== */
 .movie-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
+
+ 
+
 
 /* =====================================
    MOVIE CARD
@@ -171,20 +145,19 @@ button:hover {
     border-radius: 8px;
     overflow: hidden;
     transition: 0.3s;
+    padding-bottom: 10px;
 }
 
 .movie-card:hover {
     transform: scale(1.05);
 }
 
-/* IMAGE */
 .movie-card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
 }
 
-/* INFO */
 .movie-info {
     padding: 15px;
 }
@@ -198,14 +171,22 @@ button:hover {
     color: #b3b3b3;
 }
 
-/* FAVORITES BUTTON INSIDE CARD */
-.movie-info button {
-    margin-top: 10px;
+/* FAVORITES BUTTON */
+.fav-btn {
+    margin: 10px;
+    background: #333;
+    width: 90%;
 }
 
-/* REMOVE BUTTON (FAVORITES PAGE) */
+.fav-btn:hover {
+    background: #555;
+}
+
+/* REMOVE BUTTON */
 .remove-btn {
     background: #444;
+    width: 90%;
+    margin: 10px;
 }
 
 .remove-btn:hover {
@@ -213,20 +194,24 @@ button:hover {
 }
 
 /* =====================================
-   MESSAGES
+   MESSAGES (FIXED PROPER TOGGLE SYSTEM)
 ===================================== */
-.error-message {
+.error-message,
+.success-message {
     display: none;
+}
+
+.error-message.show,
+.success-message.show {
+    display: block;
+}
+
+.error-message {
     color: #ff4d4d;
     margin-top: 10px;
 }
 
-.error-message.show {
-    display: block;
-}
-
 .success-message {
-    display: none;
     color: #4CAF50;
     margin-top: 10px;
 }
@@ -259,4 +244,13 @@ footer {
         margin: 10px 0;
     }
 }
+.header-img { 
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    margin-top: 15px; 
+}
 
+#movieList {
+    display: none;
+}

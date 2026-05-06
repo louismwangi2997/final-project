@@ -19,7 +19,6 @@
 
 <main>
 
-<!-- ================= FAVORITES ================= -->
 <section>
     <h2>Saved Movies</h2>
 
@@ -30,27 +29,36 @@
     </p>
 </section>
 
-<!-- ================= MOVIE SUGGESTION FORM ================= -->
 <section>
     <h2>Suggest a Movie</h2>
+    <p> Do you have a movie you would like to suggest? Feel free to submit your suggestion below!</p>
 
     <form id="suggestForm">
         <input type="text" id="movieName" placeholder="Movie Title" required>
-        <input type="text" id="movieGenre" placeholder="Genre" required>
-        <button type="submit">Submit Suggestion</button>
+
+        <select id="movieGenre" required>
+            <option value="">Select Genre</option>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+            <option value="romance">Romance</option>
+            <option value="horror">Horror</option>
+        </select>
+
+        <button type="submit">Submit</button>
     </form>
 
     <p id="suggestMsg" class="success-message">Suggestion submitted!</p>
 </section>
 
-<!-- ================= FEEDBACK FORM ================= -->
 <section>
-    <h2>Give Feedback</h2>
+    <h2>Feedback</h2>
 
     <form id="feedbackForm">
-        <input type="text" id="userName" placeholder="Your Name" required>
-        <textarea id="feedbackText" placeholder="Write your feedback..." required></textarea>
-        <button type="submit">Submit Feedback</button>
+        <input type="text" id="userName" placeholder="Name" required>
+        <input type="email" id="userEmail" placeholder="Email" required>
+        <textarea id="feedbackText" placeholder="Feedback" required></textarea>
+
+        <button type="submit">Send</button>
     </form>
 
     <p id="feedbackMsg" class="success-message">Feedback submitted!</p>
@@ -66,4 +74,3 @@
 
 </body>
 </html>
-
