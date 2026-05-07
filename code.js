@@ -1,3 +1,6 @@
+// FAVOURITES HTML
+
+
 // ===============================
 // STORAGE KEYS
 // ===============================
@@ -42,6 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
     handleFeedbackForm(); // Wires up the feedback form
   }
 });
+
+
+
+
+// RECOMENDATION HTML
+
 
 // ===============================
 // 1. MOVIE FILTERING

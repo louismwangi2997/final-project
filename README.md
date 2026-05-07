@@ -99,7 +99,7 @@ Using VS Code with the Live Server extension:
 **So that** I only see movies that are appropriate for me
 
 
-**Scenario**: Successful movie filter.
+1. **Scenario: Successful movie filter.**
 
   Given I am on the Movies page
   When I select a genre from the dropdown
@@ -107,7 +107,7 @@ Using VS Code with the Live Server extension:
   And I click "Find Movies"
   Then I should see only movies that match my selected genre and age group
 
-**Scenario**: No movies found.
+2. **Scenario: No movies found.**
 
   Given I am on the Movies page
   When I select a genre and enter an age
@@ -115,7 +115,7 @@ Using VS Code with the Live Server extension:
   Then I should see an alert saying "No movies found for your selection"
   And the movie grid should be hidden
 
-**Scenario**: Age or genre not provided.
+3. **Scenario: Age or genre not provided.**
 
   Given I am on the Movies page
   When I click "Find Movies" without entering an age or selecting a genre
@@ -131,14 +131,14 @@ Using VS Code with the Live Server extension:
 **So that** I can find it again later on the Favourites page
 
 
-**Scenario**: Adding a new favourite.
+1. **Scenario: Adding a new favourite.**
 
   Given a movie card is visible on the Movies page
   When I click "Add to Favorites"
   Then the movie title and poster should be saved to localStorage
   And I should see an alert saying "Added to favorites!"
 
-**Scenario**: Adding a duplicate favourite.
+2. **Scenario: Adding a duplicate favourite.**
 
   Given a movie has already been saved to my favourites
   When I click "Add to Favorites" on the same movie again
@@ -155,19 +155,19 @@ Using VS Code with the Live Server extension:
 **So that** I can manage the movies I have liked
 
 
-**Scenario**: Viewing saved favourites.
+1. **Scenario: Viewing saved favourites.**
 
   Given I have saved one or more movies
   When I open the Favourites page
   Then I should see a card for each saved movie with its title and poster
 
-**Scenario**: No saved favourites.
+2. **Scenario: No saved favourites.**
 
   Given I have not saved any movies
   When I open the Favourites page
   Then I should see the message "You have no favorite movies yet"
 
-**Scenario**: Removing a favourite.
+3. **Scenario: Removing a favourite.**
 
   Given a movie is displayed on my Favourites page
   When I click "Remove" on that movie card
@@ -184,7 +184,7 @@ Using VS Code with the Live Server extension:
 **So that** it can potentially be added to the website
 
 
-**Scenario**: Submitting a valid suggestion.
+1. **Scenario: Submitting a valid suggestion.**
 
   Given I am on the Favourites page
   When I enter a movie title and select a genre
@@ -193,7 +193,7 @@ Using VS Code with the Live Server extension:
   And I should see the message "Suggestion submitted!"
   And the form should reset
 
-**Scenario**: Submitting with empty fields.
+2. **Scenario: Submitting with empty fields.**
 
   Given I am on the Favourites page
   When I click "Submit" without filling in all fields
@@ -210,7 +210,7 @@ Using VS Code with the Live Server extension:
 **So that** the developer knows what I think
 
 
-**Scenario**: Submitting valid feedback.
+1. **Scenario: Submitting valid feedback.**
 
   Given I am on the Favourites page
   When I enter my name, a valid email, and feedback text
@@ -218,13 +218,13 @@ Using VS Code with the Live Server extension:
   Then I should see the message "Feedback submitted!"
   And the form should reset
 
-**Scenario**: Submitting with empty fields.
+2. **Scenario: Submitting with empty fields.**
 
   Given I have not filled in all fields
   When I click "Send"
   Then I should see an alert saying "All fields are required."
 
-**Scenario**: Submitting an invalid email.
+3. **Scenario: Submitting an invalid email.**
 
   Given I have filled in all fields
   But my email does not contain "@"
