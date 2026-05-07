@@ -99,21 +99,24 @@ Using VS Code with the Live Server extension:
 **So that** I only see movies that are appropriate for me
 
 
-Scenario: Successful movie filter
+**Scenario**: Successful movie filter.
+
   Given I am on the Movies page
   When I select a genre from the dropdown
   And I enter a valid age
   And I click "Find Movies"
   Then I should see only movies that match my selected genre and age group
 
-Scenario: No movies found
+**Scenario**: No movies found.
+
   Given I am on the Movies page
   When I select a genre and enter an age
   And no movies exist for that combination
   Then I should see an alert saying "No movies found for your selection"
   And the movie grid should be hidden
 
-Scenario: Age or genre not provided
+**Scenario**: Age or genre not provided.
+
   Given I am on the Movies page
   When I click "Find Movies" without entering an age or selecting a genre
   Then I should see an alert prompting me to fill in the missing field
@@ -128,13 +131,15 @@ Scenario: Age or genre not provided
 **So that** I can find it again later on the Favourites page
 
 
-Scenario: Adding a new favourite
+**Scenario**: Adding a new favourite.
+
   Given a movie card is visible on the Movies page
   When I click "Add to Favorites"
   Then the movie title and poster should be saved to localStorage
   And I should see an alert saying "Added to favorites!"
 
-Scenario: Adding a duplicate favourite
+**Scenario**: Adding a duplicate favourite.
+
   Given a movie has already been saved to my favourites
   When I click "Add to Favorites" on the same movie again
   Then the movie should not be saved again
@@ -150,17 +155,20 @@ Scenario: Adding a duplicate favourite
 **So that** I can manage the movies I have liked
 
 
-Scenario: Viewing saved favourites
+**Scenario**: Viewing saved favourites.
+
   Given I have saved one or more movies
   When I open the Favourites page
   Then I should see a card for each saved movie with its title and poster
 
-Scenario: No saved favourites
+**Scenario**: No saved favourites.
+
   Given I have not saved any movies
   When I open the Favourites page
   Then I should see the message "You have no favorite movies yet"
 
-Scenario: Removing a favourite
+**Scenario**: Removing a favourite.
+
   Given a movie is displayed on my Favourites page
   When I click "Remove" on that movie card
   Then the movie should be deleted from localStorage
@@ -176,7 +184,8 @@ Scenario: Removing a favourite
 **So that** it can potentially be added to the website
 
 
-Scenario: Submitting a valid suggestion
+**Scenario**: Submitting a valid suggestion.
+
   Given I am on the Favourites page
   When I enter a movie title and select a genre
   And I click "Submit"
@@ -184,7 +193,8 @@ Scenario: Submitting a valid suggestion
   And I should see the message "Suggestion submitted!"
   And the form should reset
 
-Scenario: Submitting with empty fields
+**Scenario**: Submitting with empty fields.
+
   Given I am on the Favourites page
   When I click "Submit" without filling in all fields
   Then I should see an alert saying "Please fill all fields."
@@ -200,19 +210,22 @@ Scenario: Submitting with empty fields
 **So that** the developer knows what I think
 
 
-Scenario: Submitting valid feedback
+**Scenario**: Submitting valid feedback.
+
   Given I am on the Favourites page
   When I enter my name, a valid email, and feedback text
   And I click "Send"
   Then I should see the message "Feedback submitted!"
   And the form should reset
 
-Scenario: Submitting with empty fields
+**Scenario**: Submitting with empty fields.
+
   Given I have not filled in all fields
   When I click "Send"
   Then I should see an alert saying "All fields are required."
 
-Scenario: Submitting an invalid email
+**Scenario**: Submitting an invalid email.
+
   Given I have filled in all fields
   But my email does not contain "@"
   When I click "Send"
