@@ -94,142 +94,142 @@ Using VS Code with the Live Server extension:
 
 ## Feature: Movie Filtering
 
-**As a** user on the Movies page
-**I want to** filter movies by my age and preferred genre
-**So that** I only see movies that are appropriate for me
+**As a** user on the Movies page,
+**I want to** filter movies by my age and preferred genre,
+**so that** I only see movies that are appropriate for me.
 
 
 1. **Scenario: Successful movie filter.**
 
-  Given I am on the Movies page
-  When I select a genre from the dropdown
-  And I enter a valid age
-  And I click "Find Movies"
-  Then I should see only movies that match my selected genre and age group
+  Given I am on the Movies page,
+  when I select a genre from the dropdown
+  and I enter a valid age
+  and I click "Find Movies",
+  then I should see only movies that match my selected genre and age group.
 
 2. **Scenario: No movies found.**
 
-  Given I am on the Movies page
-  When I select a genre and enter an age
-  And no movies exist for that combination
-  Then I should see an alert saying "No movies found for your selection"
-  And the movie grid should be hidden
+  Given I am on the Movies page,
+  when I select a genre and enter an age
+  and no movies exist for that combination,
+  then I should see an alert saying "No movies found for your selection"
+  and the movie grid should be hidden.
 
 3. **Scenario: Age or genre not provided.**
 
-  Given I am on the Movies page
-  When I click "Find Movies" without entering an age or selecting a genre
-  Then I should see an alert prompting me to fill in the missing field
+  Given I am on the Movies page,
+  when I click "Find Movies" without entering an age or selecting a genre,
+  then I should see an alert prompting me to fill in the missing field.
 
 
 ---
 
 ## Feature: Add to Favourites
 
-**As a** user viewing movie results
-**I want to** save a movie to my favourites
-**So that** I can find it again later on the Favourites page
+**As a** user viewing movie results,
+**I want to** save a movie to my favourites,
+**so that** I can find it again later on the Favourites page.
 
 
 1. **Scenario: Adding a new favourite.**
 
-  Given a movie card is visible on the Movies page
-  When I click "Add to Favorites"
-  Then the movie title and poster should be saved to localStorage
-  And I should see an alert saying "Added to favorites!"
+  Given a movie card is visible on the Movies page,
+  when I click "Add to Favorites",
+  then the movie title and poster should be saved to localStorage
+  and I should see an alert saying "Added to favorites!"
 
 2. **Scenario: Adding a duplicate favourite.**
 
-  Given a movie has already been saved to my favourites
-  When I click "Add to Favorites" on the same movie again
-  Then the movie should not be saved again
-  And I should see an alert saying "Already in favorites!"
+  Given a movie has already been saved to my favourites,
+  when I click "Add to Favorites" on the same movie again,
+  then the movie should not be saved again
+  and I should see an alert saying "Already in favorites!"
 
 
 ---
 
 ## Feature: Favourites List
 
-**As a** user on the Favourites page
+**As a** user on the Favourites page,
 **I want to** see all my saved movies
-**So that** I can manage the movies I have liked
+**so that** I can manage the movies I have liked
 
 
 1. **Scenario: Viewing saved favourites.**
 
-  Given I have saved one or more movies
-  When I open the Favourites page
-  Then I should see a card for each saved movie with its title and poster
+  Given I have saved one or more movies,
+  when I open the Favourites page
+  then I should see a card for each saved movie with its title and poster.
 
 2. **Scenario: No saved favourites.**
 
-  Given I have not saved any movies
-  When I open the Favourites page
-  Then I should see the message "You have no favorite movies yet"
+  Given I have not saved any movies,
+  when I open the Favourites page
+  then I should see the message "You have no favorite movies yet".
 
 3. **Scenario: Removing a favourite.**
 
-  Given a movie is displayed on my Favourites page
-  When I click "Remove" on that movie card
-  Then the movie should be deleted from localStorage
-  And the favourites list should refresh without that movie
+  Given a movie is displayed on my Favourites page,
+  when I click "Remove" on that movie card,
+  then the movie should be deleted from localStorage
+  and the favourites list should refresh without that movie.
 
 
 ---
 
 ## Feature: Movie Suggestion Form
 
-**As a** user on the Favourites page
+**As a** user on the Favourites page,
 **I want to** suggest a movie
-**So that** it can potentially be added to the website
+**so that** it can potentially be added to the website.
 
 
 1. **Scenario: Submitting a valid suggestion.**
 
-  Given I am on the Favourites page
-  When I enter a movie title and select a genre
-  And I click "Submit"
-  Then my suggestion should be saved to localStorage
-  And I should see the message "Suggestion submitted!"
-  And the form should reset
+  Given I am on the Favourites page,
+  when I enter a movie title and select a genre
+  and I click "Submit",
+  then my suggestion should be saved to localStorage
+  and I should see the message "Suggestion submitted!"
+  and the form should reset.
 
 2. **Scenario: Submitting with empty fields.**
 
-  Given I am on the Favourites page
-  When I click "Submit" without filling in all fields
-  Then I should see an alert saying "Please fill all fields."
-  And the suggestion should not be saved
+  Given I am on the Favourites page,
+  when I click "Submit" without filling in all fields,
+  then I should see an alert saying "Please fill all fields."
+  and the suggestion should not be saved.
 
 
 ---
 
 ## Feature: Feedback Form
 
-**As a** user on the Favourites page
+**As a** user on the Favourites page,
 **I want to** leave feedback about the website
-**So that** the developer knows what I think
+**so that** the developer knows what I think.
 
 
 1. **Scenario: Submitting valid feedback.**
 
-  Given I am on the Favourites page
-  When I enter my name, a valid email, and feedback text
-  And I click "Send"
-  Then I should see the message "Feedback submitted!"
-  And the form should reset
+  Given I am on the Favourites page,
+  when I enter my name, a valid email, and feedback text
+  and I click "Send",
+  then I should see the message "Feedback submitted!"
+  And the form should reset.
 
 2. **Scenario: Submitting with empty fields.**
 
-  Given I have not filled in all fields
-  When I click "Send"
-  Then I should see an alert saying "All fields are required."
+  Given I have not filled in all fields,
+  when I click "Send"
+  then I should see an alert saying "All fields are required."
 
 3. **Scenario: Submitting an invalid email.**
 
-  Given I have filled in all fields
-  But my email does not contain "@"
-  When I click "Send"
-  Then I should see an alert saying "Enter a valid email."
+  Given I have filled in all fields,
+  but my email does not contain "@"
+  when I click "Send",
+  then I should see an alert saying "Enter a valid email."
 
 
 ---
