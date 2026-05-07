@@ -20,63 +20,6 @@ This web application helps users discover movies based on preferences such as ge
 
 ---
 
-## Features
-
-### Movie Filtering (`recommendation.html`)
-- User enters their age and selects a genre (Action, Comedy, Romance, Horror).
-- On clicking **Find Movies**, the app maps the age to one of four age groups and shows only cards that match both the genre and age group.
-- If no movies match, an alert is shown and the grid is hidden.
-
-### Add to Favourites (`recommendation.html`)
-- Every visible movie card has an **Add to Favorites** button.
-- Clicking it saves the movie's title and poster image URL to `localStorage`.
-- Duplicate entries are prevented by checking the title before saving.
-
-### Favourites List (`favourite.html`)
-- Displays all saved movies on page load.
-- Each card has a **Remove** button that deletes it from `localStorage` and refreshes the list.
-- If no movies are saved, a friendly empty-state message is shown.
-
-### Movie Suggestion Form (`favourite.html`)
-- Users can submit a movie title and genre.
-- Submissions are saved to `localStorage` under the `movieSuggestions` key.
-- A success message is shown after a valid submission.
-
-### Feedback Form (`favourite.html`)
-- Collects name, email, and free-text feedback.
-- Validated client-side (all fields required, email must contain `@`).
-- Feedback is **not** stored or sent anywhere — the form is purely presentational.
-
----
-
-## File Structure
-
-```
-MovieMood/
-├── index.html            # Home page
-├── recommendation.html   # Movie filter + results page
-├── favourite.html        # Favourites, suggestion form, feedback form
-├── style.css             # Shared stylesheet
-├── code.js               # All JavaScript logic
-└── img/                  # Movie poster images
-    ├── actionHOME.jpg
-    ├── finalDestination.png
-    ├── theNun.jpg
-    └── ... (one image per movie card)
-```
-
----
-
-## Technologies Used
-
-| Technology | Purpose |
-|---|---|
-| HTML5 | Page structure |
-| CSS3 | Styling and layout |
-| JavaScript (ES6) | Interactivity and logic |
-| localStorage (Web Storage API) | Saving favourites and suggestions |
-
----
 
 ## How to Run
 
@@ -93,6 +36,8 @@ Using VS Code with the Live Server extension:
 
 
 ---
+
+
 # How MovieMood Works
 
 ## 1. Finding Movies
@@ -142,10 +87,169 @@ Using VS Code with the Live Server extension:
 
 > **Note:** Horror movies are only available to users aged 18 and above.
 
-> **Note**Users aged 6 and below only have Comedy options available, as all other genres lack cards tagged `data-age="6andBelow"`.
+---
+
+# BBD (Behaviour Driven Development)
+
+
+## Feature: Movie Filtering
+
+**As a** user on the Movies page
+**I want to** filter movies by my age and preferred genre
+**So that** I only see movies that are appropriate for me
+
+
+Scenario: Successful movie filter
+  Given I am on the Movies page
+  When I select a genre from the dropdown
+  And I enter a valid age
+  And I click "Find Movies"
+  Then I should see only movies that match my selected genre and age group
+
+Scenario: No movies found
+  Given I am on the Movies page
+  When I select a genre and enter an age
+  And no movies exist for that combination
+  Then I should see an alert saying "No movies found for your selection"
+  And the movie grid should be hidden
+
+Scenario: Age or genre not provided
+  Given I am on the Movies page
+  When I click "Find Movies" without entering an age or selecting a genre
+  Then I should see an alert prompting me to fill in the missing field
 
 
 ---
+
+## Feature: Add to Favourites
+
+**As a** user viewing movie results
+**I want to** save a movie to my favourites
+**So that** I can find it again later on the Favourites page
+
+
+Scenario: Adding a new favourite
+  Given a movie card is visible on the Movies page
+  When I click "Add to Favorites"
+  Then the movie title and poster should be saved to localStorage
+  And I should see an alert saying "Added to favorites!"
+
+Scenario: Adding a duplicate favourite
+  Given a movie has already been saved to my favourites
+  When I click "Add to Favorites" on the same movie again
+  Then the movie should not be saved again
+  And I should see an alert saying "Already in favorites!"
+
+
+---
+
+## Feature: Favourites List
+
+**As a** user on the Favourites page
+**I want to** see all my saved movies
+**So that** I can manage the movies I have liked
+
+
+Scenario: Viewing saved favourites
+  Given I have saved one or more movies
+  When I open the Favourites page
+  Then I should see a card for each saved movie with its title and poster
+
+Scenario: No saved favourites
+  Given I have not saved any movies
+  When I open the Favourites page
+  Then I should see the message "You have no favorite movies yet"
+
+Scenario: Removing a favourite
+  Given a movie is displayed on my Favourites page
+  When I click "Remove" on that movie card
+  Then the movie should be deleted from localStorage
+  And the favourites list should refresh without that movie
+
+
+---
+
+## Feature: Movie Suggestion Form
+
+**As a** user on the Favourites page
+**I want to** suggest a movie
+**So that** it can potentially be added to the website
+
+
+Scenario: Submitting a valid suggestion
+  Given I am on the Favourites page
+  When I enter a movie title and select a genre
+  And I click "Submit"
+  Then my suggestion should be saved to localStorage
+  And I should see the message "Suggestion submitted!"
+  And the form should reset
+
+Scenario: Submitting with empty fields
+  Given I am on the Favourites page
+  When I click "Submit" without filling in all fields
+  Then I should see an alert saying "Please fill all fields."
+  And the suggestion should not be saved
+
+
+---
+
+## Feature: Feedback Form
+
+**As a** user on the Favourites page
+**I want to** leave feedback about the website
+**So that** the developer knows what I think
+
+
+Scenario: Submitting valid feedback
+  Given I am on the Favourites page
+  When I enter my name, a valid email, and feedback text
+  And I click "Send"
+  Then I should see the message "Feedback submitted!"
+  And the form should reset
+
+Scenario: Submitting with empty fields
+  Given I have not filled in all fields
+  When I click "Send"
+  Then I should see an alert saying "All fields are required."
+
+Scenario: Submitting an invalid email
+  Given I have filled in all fields
+  But my email does not contain "@"
+  When I click "Send"
+  Then I should see an alert saying "Enter a valid email."
+
+
+---
+
+## File Structure
+
+```
+MovieMood/
+├── index.html            # Home page
+├── recommendation.html   # Movie filter + results page
+├── favourite.html        # Favourites, suggestion form, feedback form
+├── style.css             # Shared stylesheet
+├── code.js               # All JavaScript logic
+└── img/                  # Movie poster images
+    ├── actionHOME.jpg
+    ├── finalDestination.png
+    ├── theNun.jpg
+    └── ... (one image per movie card)
+```
+
+---
+
+## Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Page structure |
+| CSS3 | Styling and layout |
+| JavaScript (ES6) | Interactivity and logic |
+| localStorage (Web Storage API) | Saving favourites and suggestions |
+
+---
+
 
 
 ## Known Bugs
